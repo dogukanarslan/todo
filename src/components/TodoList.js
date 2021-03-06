@@ -1,12 +1,18 @@
 import Todo from "./Todo";
 
-const TodoList = ({ todos, setTodos }) => {
+const TodoList = ({ card, cards, setCards, todos, setTodos }) => {
   return (
     <div>
       <ul>
-        {todos.map((todo) => {
+        {card.todos.map((todo) => {
           return (
-            <Todo key={todo.id} todo={todo} setTodos={setTodos} todos={todos} />
+            <Todo
+              key={todo.id}
+              card={card}
+              cards={cards}
+              setCards={setCards}
+              todo={todo}
+            />
           );
         })}
       </ul>

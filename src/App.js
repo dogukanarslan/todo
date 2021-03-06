@@ -1,22 +1,20 @@
 import { useState } from "react";
-import Form from "./components/Form";
-import TodoList from "./components/TodoList";
+import Card from "./components/Card";
+import AddCard from "./components/AddCard";
 import "./App.css";
 
 function App() {
-  const [inputText, setInputText] = useState("");
-  const [todos, setTodos] = useState([]);
+  const [cards, setCards] = useState([]);
 
   return (
     <div className="App">
       <header className="App-header"></header>
-      <Form
-        setInputText={setInputText}
-        inputText={inputText}
-        setTodos={setTodos}
-        todos={todos}
-      />
-      <TodoList todos={todos} setTodos={setTodos} />
+      {cards.map((card) => {
+        return (
+          <Card key={card.id} card={card} cards={cards} setCards={setCards} />
+        );
+      })}
+      <AddCard cards={cards} setCards={setCards} />
     </div>
   );
 }

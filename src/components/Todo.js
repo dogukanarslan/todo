@@ -1,14 +1,35 @@
-const Todo = ({ todo, todos, setTodos }) => {
+const Todo = ({ card, cards, setCards, todo }) => {
   const handleClick = () => {
-    setTodos(todos.filter((item) => item.id !== todo.id));
+    setCards(
+      cards.map((item) => {
+        if (item.id === card.id) {
+          return {
+            ...item,
+            todos: item.todos.filter((el) => el.id !== todo.id),
+          };
+        }
+
+        return item;
+      })
+    );
   };
 
   const handleComplete = () => {
-    setTodos(
-      todos.map((item) => {
-        if (item.id === todo.id) {
-          return { ...item, completed: !item.completed };
+    setCards(
+      cards.map((item) => {
+        if (item.id === card.id) {
+          return {
+            ...item,
+            todos: item.todos.map((el) => {
+              if (el.id === todo.id) {
+                return { ...el, completed: !el.completed };
+              }
+
+              return el;
+            }),
+          };
         }
+
         return item;
       })
     );

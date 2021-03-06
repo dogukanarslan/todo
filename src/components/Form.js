@@ -1,17 +1,29 @@
-const Form = ({ setInputText, setTodos, inputText, todos }) => {
+const Form = ({ inputText, setInputText, card, cards, setCards }) => {
   const inputTextHandler = (e) => {
-    const value = e.target.value;
-    if (!!value) {
-      setInputText(e.target.value);
-    }
+    setInputText(e.target.value);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setTodos([
-      ...todos,
-      { text: inputText, completed: false, id: Math.random() },
-    ]);
+    if (inputText.length === 0) {
+      return;
+    }
+
+    setCards(
+      cards.map((item) => {
+        if (item.id === card.id) {
+          return {
+            ...item,
+            todos: [
+              ...card.todos,
+              { text: inputText, completed: false, id: Math.random() },
+            ],
+          };
+        }
+
+        return item;
+      })
+    );
     setInputText("");
   };
 
