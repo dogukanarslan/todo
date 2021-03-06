@@ -1,9 +1,11 @@
+import Todo from "./Todo";
+
 const TodoList = ({ todos }) => {
   return (
     <div>
       <ul>
         {todos.map((todo) => {
-          return <li key={todo.id}>{todo.text}</li>;
+          return <Todo key={todo.id} todo={todo} />;
         })}
       </ul>
     </div>
