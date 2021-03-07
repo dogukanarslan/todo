@@ -1,3 +1,4 @@
+import { Toast } from "toaster-js";
 import { categories } from "../constants";
 
 const Form = ({
@@ -8,7 +9,6 @@ const Form = ({
   card,
   cards,
   setCards,
-  setSelectedCategory,
 }) => {
   const inputTextHandler = (e) => {
     setInputText(e.target.value);
@@ -52,6 +52,7 @@ const Form = ({
         return item;
       })
     );
+    new Toast("Todo added!", Toast.TYPE_DONE);
     setInputText("");
   };
 

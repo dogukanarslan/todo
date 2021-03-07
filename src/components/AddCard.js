@@ -1,3 +1,5 @@
+import { Toast } from "toaster-js";
+
 const AddCard = ({ cards, setCards, setSelectedCategory }) => {
   const handleClick = () => {
     setSelectedCategory("All");
@@ -5,6 +7,7 @@ const AddCard = ({ cards, setCards, setSelectedCategory }) => {
       ...cards,
       { id: Math.random(), title: "", todos: [], category: "", isSaved: false },
     ]);
+    new Toast("Card added!", Toast.TYPE_DONE);
   };
   return (
     <div className="card card-add">

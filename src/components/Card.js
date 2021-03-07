@@ -3,6 +3,7 @@ import Form from "./Form";
 import TodoList from "./TodoList";
 import SaveCard from "./SaveCard";
 import SavedOptions from "./SavedOptions";
+import { Toast } from "toaster-js";
 
 const Card = ({ card, cards, setCards, setSelectedCategory }) => {
   const [inputText, setInputText] = useState("");
@@ -14,6 +15,7 @@ const Card = ({ card, cards, setCards, setSelectedCategory }) => {
         return item.id !== card.id;
       })
     );
+    new Toast("Card deleted!", Toast.TYPE_ERROR);
   };
 
   return (

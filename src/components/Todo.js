@@ -1,3 +1,5 @@
+import { Toast } from "toaster-js";
+
 const Todo = ({ card, cards, setCards, todo }) => {
   const handleClick = () => {
     setCards(
@@ -12,6 +14,7 @@ const Todo = ({ card, cards, setCards, todo }) => {
         return item;
       })
     );
+    new Toast("Todo deleted!", Toast.TYPE_ERROR);
   };
 
   const handleComplete = () => {
@@ -37,7 +40,9 @@ const Todo = ({ card, cards, setCards, todo }) => {
 
   return (
     <div className="card-todos-todo">
-      <li className={todo.completed ? "card-todos-todo-completed" : ""}>{todo.text}</li>
+      <li className={todo.completed ? "card-todos-todo-completed" : ""}>
+        {todo.text}
+      </li>
       <div className="card-todos-todo-buttons">
         <button disabled={card.isSaved} onClick={handleComplete}>
           <i
