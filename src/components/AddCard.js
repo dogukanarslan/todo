@@ -5,7 +5,7 @@ const AddCard = ({ cards, setCards, setSelectedCategory }) => {
     setSelectedCategory("All");
     setCards([
       ...cards,
-      { id: Math.random(), title: "", todos: [], category: "", isSaved: false },
+      { id: Math.random(), title: "", todos: [], category: "All", isSaved: false },
     ]);
     new Toast("Card added!", Toast.TYPE_DONE);
   };
