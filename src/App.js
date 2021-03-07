@@ -1,6 +1,7 @@
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.scss";
 import "toaster-js/default.scss";
+import "@fortawesome/fontawesome-free/css/all.min.css"
 import Home from "./components/Home";
 import Login from "./components/Login";
 
