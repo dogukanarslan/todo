@@ -4,6 +4,7 @@ import TodoList from "./TodoList";
 
 const Card = ({ card, cards, setCards }) => {
   const [inputText, setInputText] = useState("");
+  const [title, setTitle] = useState("");
 
   const handleDelete = () => {
     setCards(
@@ -18,6 +19,8 @@ const Card = ({ card, cards, setCards }) => {
       <Form
         setInputText={setInputText}
         inputText={inputText}
+        title={title}
+        setTitle={setTitle}
         card={card}
         cards={cards}
         setCards={setCards}
