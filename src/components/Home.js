@@ -22,7 +22,7 @@ const Home = () => {
   }
 
   return (
-    <div class="app">
+    <div className="app">
       <Sidebar user={user} cards={cards} setFilteredCards={setFilteredCards} />
       <Main
         className="main"
