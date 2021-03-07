@@ -12,6 +12,7 @@ const Home = () => {
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("user"));
     setUser(user);
+    getLocalCards();
   }, []);
 
   useEffect(() => {
@@ -22,7 +23,21 @@ const Home = () => {
         cards.filter((item) => item.category === selectedCategory)
       );
     }
+    setLocalCards(cards);
   }, [cards, selectedCategory]);
+
+  const setLocalCards = () => {
+    localStorage.setItem("cards", JSON.stringify(cards));
+  };
+
+  const getLocalCards = () => {
+    if (localStorage.getItem("cards") === null) {
+      localStorage.setItem("cards", JSON.stringify([]));
+    } else {
+      const savedCards = JSON.parse(localStorage.getItem("cards"));
+      setCards(savedCards);
+    }
+  };
 
   if (user === null) {
     return <Redirect to="/login" />;
