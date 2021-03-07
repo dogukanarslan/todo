@@ -14,8 +14,8 @@ const SavedOptions = ({ isSaved, setCards, handleDelete, cards, card }) => {
   if (isSaved) {
     return (
       <div className={card.isSaved ? "card-saved-options" : ""}>
-        <button onClick={unsaveCard}>Edit</button>
-        <button onClick={handleDelete}>Delete</button>
+        <button className="btn btn-dark" onClick={unsaveCard}>Edit</button>
+        <button className="btn btn-dark" onClick={handleDelete}>Delete</button>
       </div>
     );
   } else {

@@ -13,7 +13,7 @@ const SaveCard = ({ setCards, cards, card }) => {
 
   return (
     <div className="card-save">
-      <button onClick={saveCard}>Save</button>
+      <button className="btn btn-success" onClick={saveCard}>Save</button>
     </div>
   );
 };

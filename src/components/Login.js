@@ -16,7 +16,10 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    localStorage.setItem("user", JSON.stringify({ name, surname }));
+    localStorage.setItem(
+      "user",
+      JSON.stringify({ name: name.trim(), surname: surname.trim() })
+    );
     setRedirected(true);
   };
 

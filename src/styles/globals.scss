@@ -1,0 +1,19 @@
+body {
+  font-family: "Quicksand", sans-serif;
+}
+
+.btn {
+  color: #fff;
+  border: 0;
+  padding: 10px 15px;
+  border-radius: 10px;
+  width: 100%;
+}
+
+.btn-success {
+  background-color: $success-color;
+}
+
+.btn-dark {
+  background-color: $main-color;
+}

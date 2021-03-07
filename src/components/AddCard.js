@@ -9,7 +9,7 @@ const AddCard = ({ cards, setCards, setSelectedCategory }) => {
   return (
     <div className="card card-add">
       <h1 className="card-add-title">New Project</h1>
-      <button className="card-add-button" onClick={handleClick}>
+      <button className="card-add-button btn btn-dark" onClick={handleClick}>
         <i className="fas fa-plus"></i> CREATE
       </button>
     </div>
