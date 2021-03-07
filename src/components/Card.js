@@ -15,7 +15,7 @@ const Card = ({ card, cards, setCards }) => {
   };
 
   return (
-    <div>
+    <div className="card">
       <Form
         setInputText={setInputText}
         inputText={inputText}
@@ -26,7 +26,7 @@ const Card = ({ card, cards, setCards }) => {
         setCards={setCards}
       />
       <TodoList card={card} cards={cards} setCards={setCards} />
-      <button onClick={handleDelete}>Delete Card</button>
+      <span className="card-delete" onClick={handleDelete}><i className="fas fa-trash"></i></span>
     </div>
   );
 };

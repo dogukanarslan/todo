@@ -25,13 +25,13 @@ const Login = () => {
   }
 
   return (
-    <div>
+    <div className="login">
       <form onSubmit={handleSubmit}>
         <label htmlFor="name">Name</label>
         <input type="text" value={name} onChange={handleNameChange} />
         <label htmlFor="name">Surname</label>
         <input type="text" value={surname} onChange={handleSurnameChange} />
-        <button>Save</button>
+        <button>Login</button>
       </form>
     </div>
   );

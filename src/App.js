@@ -6,7 +6,6 @@ import Login from "./components/Login";
 function App() {
   return (
     <Router>
-      <div className="App">
         <Switch>
           <Route exact path="/">
             <Home />
@@ -15,7 +14,6 @@ function App() {
             <Login />
           </Route>
         </Switch>
-      </div>
     </Router>
   );
 }

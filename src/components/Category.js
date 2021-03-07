@@ -12,11 +12,11 @@ const Category = ({ category, cards, setFilteredCards }) => {
   };
 
   return (
-    <div>
+    <div className="sidebar-categories-category">
+      <li>{category.type}</li>
       <button onClick={filterCategories}>
         <i className="far fa-square"></i>
       </button>
-      <li>{category.type}</li>
     </div>
   );
 };

@@ -3,7 +3,7 @@ import AddCard from "./AddCard";
 
 const Main = ({ cards, setCards }) => {
   return (
-    <div>
+    <div className="main">
       {cards.map((card) => {
         return (
           <Card key={card.id} card={card} cards={cards} setCards={setCards} />

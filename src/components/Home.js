@@ -22,13 +22,13 @@ const Home = () => {
   }
 
   return (
-    <div>
+    <div class="app">
       <Sidebar
         user={user}
         cards={cards}
         setFilteredCards={setFilteredCards}
       />
-      <Main cards={filteredCards} setCards={setCards} />
+      <Main className="main" cards={filteredCards} setCards={setCards} />
     </div>
   );
 };

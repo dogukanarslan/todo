@@ -67,8 +67,9 @@ const Form = ({
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="card-form" onSubmit={handleSubmit}>
       <input
+        className="card-form-title"
         type="text"
         value={title}
         placeholder="Title"
@@ -83,9 +84,8 @@ const Form = ({
           );
         })}
       </select>
-      <input type="text" onChange={inputTextHandler} value={inputText} />
-      <button>
-        <i className="fas fa-plus square"></i>
+      <input type="text" onChange={inputTextHandler} value={inputText} placeholder="What to do?"/>
+      <button><i className="fas fa-plus square"></i>
       </button>
     </form>
   );

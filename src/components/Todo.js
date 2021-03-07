@@ -36,16 +36,18 @@ const Todo = ({ card, cards, setCards, todo }) => {
   };
 
   return (
-    <div>
+    <div className="card-todos-todo">
       <li>{todo.text}</li>
-      <button onClick={handleComplete}>
-        <i
-          className={todo.completed ? "far fa-check-square" : "far fa-square"}
-        ></i>
-      </button>
-      <button onClick={handleClick}>
-        <i className="fas fa-trash"></i>
-      </button>
+      <div className="card-todos-todo-buttons">
+        <button onClick={handleComplete}>
+          <i
+            className={todo.completed ? "far fa-check-square" : "far fa-square"}
+          ></i>
+        </button>
+        <button onClick={handleClick}>
+          <i className="fas fa-trash"></i>
+        </button>
+      </div>
     </div>
   );
 };

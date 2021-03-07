@@ -2,7 +2,7 @@ import Todo from "./Todo";
 
 const TodoList = ({ card, cards, setCards, todos, setTodos }) => {
   return (
-    <div>
+    <div className="card-todos">
       <ul>
         {card.todos.map((todo) => {
           return (
