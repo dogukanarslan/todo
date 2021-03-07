@@ -1,6 +1,8 @@
 import { useState } from "react";
 import Form from "./Form";
 import TodoList from "./TodoList";
+import SaveCard from "./SaveCard";
+import SavedOptions from "./SavedOptions";
 
 const Card = ({ card, cards, setCards, setSelectedCategory }) => {
   const [inputText, setInputText] = useState("");
@@ -15,21 +17,35 @@ const Card = ({ card, cards, setCards, setSelectedCategory }) => {
   };
 
   return (
-    <div className="card">
-      <Form
-        setInputText={setInputText}
-        inputText={inputText}
-        title={title}
-        setTitle={setTitle}
-        card={card}
-        cards={cards}
+    <div className={card.isSaved ? "card card-saved" : "card"}>
+      <SavedOptions
+        isSaved={card.isSaved}
+        handleDelete={handleDelete}
         setCards={setCards}
-        setSelectedCategory={setSelectedCategory}
+        cards={cards}
+        card={card}
       />
-      <TodoList card={card} cards={cards} setCards={setCards} />
-      <span className="card-delete" onClick={handleDelete}>
-        <i className="fas fa-trash"></i>
-      </span>
+      <div className={card.isSaved ? "card-hide" : ""}>
+        <Form
+          setInputText={setInputText}
+          inputText={inputText}
+          title={title}
+          setTitle={setTitle}
+          card={card}
+          cards={cards}
+          setCards={setCards}
+          setSelectedCategory={setSelectedCategory}
+        />
+        <TodoList card={card} cards={cards} setCards={setCards} />
+        {!card.isSaved && (
+          <span className="card-delete" onClick={handleDelete}>
+            <i className="fas fa-trash"></i>
+          </span>
+        )}
+        {!card.isSaved && (
+          <SaveCard setCards={setCards} cards={cards} card={card} />
+        )}
+      </div>
     </div>
   );
 };

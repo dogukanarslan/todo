@@ -3,7 +3,7 @@ const AddCard = ({ cards, setCards, setSelectedCategory }) => {
     setSelectedCategory("All");
     setCards([
       ...cards,
-      { id: Math.random(), title: "", todos: [], category: "" },
+      { id: Math.random(), title: "", todos: [], category: "", isSaved: false },
     ]);
   };
   return (

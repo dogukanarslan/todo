@@ -72,13 +72,18 @@ const Form = ({
   return (
     <form className="card-form" onSubmit={handleSubmit}>
       <input
+        disabled={card.isSaved}
         className="card-form-title"
         type="text"
-        value={title}
+        value={card.title}
         placeholder="Title"
         onChange={titleHandler}
       />
-      <select value={card.category} onChange={setCategory}>
+      <select
+        disabled={card.isSaved}
+        value={card.category}
+        onChange={setCategory}
+      >
         {categories.map((category) => {
           return (
             <option key={Math.random()} value={category.type}>
@@ -87,15 +92,19 @@ const Form = ({
           );
         })}
       </select>
-      <input
-        type="text"
-        onChange={inputTextHandler}
-        value={inputText}
-        placeholder="What to do?"
-      />
-      <button>
-        <i className="fas fa-plus square"></i>
-      </button>
+      {!card.isSaved && (
+        <div className="card-form-new">
+          <input
+            type="text"
+            onChange={inputTextHandler}
+            value={inputText}
+            placeholder="What to do?"
+          />
+          <button>
+            <i className="fas fa-plus square"></i>
+          </button>
+        </div>
+      )}
     </form>
   );
 };
