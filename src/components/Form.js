@@ -100,6 +100,7 @@ const Form = ({
             onChange={inputTextHandler}
             value={inputText}
             placeholder="What to do?"
+            required
           />
           <button className="btn btn-dark">
             <i className="fas fa-plus square"></i>

@@ -31,9 +31,9 @@ const Login = () => {
     <div className="login">
       <form onSubmit={handleSubmit}>
         <label htmlFor="name">Name</label>
-        <input type="text" value={name} onChange={handleNameChange} />
+        <input type="text" value={name} onChange={handleNameChange} required/>
         <label htmlFor="name">Surname</label>
-        <input type="text" value={surname} onChange={handleSurnameChange} />
+        <input type="text" value={surname} onChange={handleSurnameChange} required />
         <button>Login</button>
       </form>
     </div>

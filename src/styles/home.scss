@@ -72,6 +72,9 @@
         transform: translate(-50%, -50%);
         opacity: 0;
         display: flex;
+        button {
+          margin-right: 10px;
+        }
       }
       &-form {
         padding: 10px;
@@ -152,10 +155,22 @@
 @media screen and (max-width: 600px) {
   .home {
     flex-direction: column;
+    .sidebar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &-info {
+        flex-direction: row;
+        margin-bottom: 0;
+        &-image {
+          margin-right: 10px;
+        }
+      }
+    }
     .main {
       justify-content: center;
       .card {
-        flex-basis: 65%;
+        flex-basis: 60%;
       }
     }
   }
