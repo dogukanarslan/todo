@@ -4,6 +4,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 This is a TODO app that you can create separate cards and customize each card individually.
 
+https://dogukanarslan.github.io/todo/#/
+
 ## Available Scripts
 
 After cloning the project, you can run:
