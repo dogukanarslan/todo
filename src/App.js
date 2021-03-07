@@ -1,16 +1,22 @@
-import { useState } from "react";
+import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
-import Main from "./components/Main";
-import Sidebar from "./components/Sidebar";
+import Home from "./components/Home";
+import Login from "./components/Login";
 
 function App() {
-  const [cards, setCards] = useState([]);
-
   return (
-    <div className="App">
-      <Sidebar />
-      <Main cards={cards} setCards={setCards} />
-    </div>
+    <Router>
+      <div className="App">
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/login">
+            <Login />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
