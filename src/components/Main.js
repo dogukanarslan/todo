@@ -1,7 +1,13 @@
 import Card from "./Card";
 import AddCard from "./AddCard";
 
-const Main = ({ cards, setCards, filteredCards, setFilteredCards }) => {
+const Main = ({
+  cards,
+  setCards,
+  filteredCards,
+  setFilteredCards,
+  setSelectedCategory,
+}) => {
   return (
     <div className="main">
       {filteredCards.map((card) => {
@@ -9,8 +15,10 @@ const Main = ({ cards, setCards, filteredCards, setFilteredCards }) => {
           <Card
             key={card.id}
             card={card}
-            cards={filteredCards}
+            cards={cards}
+            filteredCards={filteredCards}
             setCards={setCards}
+            setSelectedCategory={setSelectedCategory}
           />
         );
       })}
@@ -19,6 +27,7 @@ const Main = ({ cards, setCards, filteredCards, setFilteredCards }) => {
         setCards={setCards}
         filteredCards={filteredCards}
         setFilteredCards={setFilteredCards}
+        setSelectedCategory={setSelectedCategory}
       />
     </div>
   );

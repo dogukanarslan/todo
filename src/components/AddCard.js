@@ -1,5 +1,6 @@
-const AddCard = ({ cards, setCards }) => {
+const AddCard = ({ cards, setCards, setSelectedCategory }) => {
   const handleClick = () => {
+    setSelectedCategory("All");
     setCards([
       ...cards,
       { id: Math.random(), title: "", todos: [], category: "" },

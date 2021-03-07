@@ -7,6 +7,7 @@ const Home = () => {
   const [cards, setCards] = useState([]);
   const [filteredCards, setFilteredCards] = useState([]);
   const [user, setUser] = useState({});
+  const [selectedCategory, setSelectedCategory] = useState("All");
 
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("user"));
@@ -14,8 +15,14 @@ const Home = () => {
   }, []);
 
   useEffect(() => {
-    setFilteredCards(cards);
-  }, [cards]);
+    if ("All" === selectedCategory) {
+      setFilteredCards(cards);
+    } else {
+      setFilteredCards(
+        cards.filter((item) => item.category === selectedCategory)
+      );
+    }
+  }, [cards, selectedCategory]);
 
   if (user === null) {
     return <Redirect to="/login" />;
@@ -23,13 +30,21 @@ const Home = () => {
 
   return (
     <div className="app">
-      <Sidebar user={user} cards={cards} setFilteredCards={setFilteredCards} />
+      <Sidebar
+        user={user}
+        cards={cards}
+        setFilteredCards={setFilteredCards}
+        selectedCategory={selectedCategory}
+        setSelectedCategory={setSelectedCategory}
+      />
       <Main
         className="main"
         filteredCards={filteredCards}
         cards={cards}
         setFilteredCards={setFilteredCards}
         setCards={setCards}
+        selectedCategory={selectedCategory}
+        setSelectedCategory={setSelectedCategory}
       />
     </div>
   );

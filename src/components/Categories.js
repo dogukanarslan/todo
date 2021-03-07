@@ -1,24 +1,14 @@
-import { useState } from "react";
 import { categories } from "../constants";
 import Category from "./Category";
 
-const Categories = ({ cards, setFilteredCards }) => {
-  const [selectedCategories, setSelectedCategories] = useState([]);
-
+const Categories = ({
+  cards,
+  setFilteredCards,
+  selectedCategory,
+  setSelectedCategory,
+}) => {
   const filterCategories = (e, type) => {
-    let isSelected = selectedCategories.some((item) => {
-      return item === type;
-    });
-
-    if (isSelected) {
-      setSelectedCategories(
-        selectedCategories.filter((item) => {
-          return item !== type;
-        })
-      );
-    } else {
-      setSelectedCategories([...selectedCategories, type]);
-    }
+    setSelectedCategory(type);
 
     if ("All" === type) {
       setFilteredCards(cards);
@@ -41,6 +31,7 @@ const Categories = ({ cards, setFilteredCards }) => {
             cards={cards}
             setFilteredCards={setFilteredCards}
             filterCategories={filterCategories}
+            selectedCategory={selectedCategory}
           />
         );
       })}

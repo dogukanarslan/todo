@@ -8,6 +8,7 @@ const Form = ({
   card,
   cards,
   setCards,
+  setSelectedCategory,
 }) => {
   const inputTextHandler = (e) => {
     setInputText(e.target.value);
@@ -33,6 +34,8 @@ const Form = ({
     if (inputText.length === 0) {
       return;
     }
+
+    //setSelectedCategory("All");
 
     setCards(
       cards.map((item) => {
@@ -84,8 +87,14 @@ const Form = ({
           );
         })}
       </select>
-      <input type="text" onChange={inputTextHandler} value={inputText} placeholder="What to do?"/>
-      <button><i className="fas fa-plus square"></i>
+      <input
+        type="text"
+        onChange={inputTextHandler}
+        value={inputText}
+        placeholder="What to do?"
+      />
+      <button>
+        <i className="fas fa-plus square"></i>
       </button>
     </form>
   );
