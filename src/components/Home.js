@@ -18,7 +18,7 @@ const Home = () => {
 
   return (
     <div>
-      <Sidebar />
+      <Sidebar user={user} />
       <Main cards={cards} setCards={setCards} />
     </div>
   );

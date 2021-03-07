@@ -1,9 +1,12 @@
-const Sidebar = () => {
+const Sidebar = ({ user }) => {
   return (
     <div>
-      Sidebar
+      <div>
+        <i className="far fa-user fa-5x"></i>
+      </div>
+      <h2>{`${user.name} ${user.surname}`}</h2>
     </div>
-   );
-}
+  );
+};
 
 export default Sidebar;
