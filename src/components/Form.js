@@ -101,7 +101,7 @@ const Form = ({
             value={inputText}
             placeholder="What to do?"
           />
-          <button>
+          <button className="btn btn-dark">
             <i className="fas fa-plus square"></i>
           </button>
         </div>

@@ -77,21 +77,22 @@
         padding: 10px;
         display: flex;
         flex-direction: column;
-        &-new {
-          display: flex;
-          flex-direction: column;
-        }
         input,
         select {
           margin-bottom: 20px;
           padding: 5px;
         }
-        button {
-          color: #fff;
-          border: 0;
-          background: $main-color;
-          padding: 5px;
-          border-radius: 10px;
+        &-new {
+          display: flex;
+          justify-content: space-between;
+          input {
+            margin-bottom: 0;
+            width: 80%;
+          }
+          button {
+            width: 10%;
+            padding: 0;
+          }
         }
       }
       &-todos {
@@ -143,6 +144,18 @@
           color: #fff;
           background: $danger-color;
         }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .home {
+    flex-direction: column;
+    .main {
+      justify-content: center;
+      .card {
+        flex-basis: 65%;
       }
     }
   }
