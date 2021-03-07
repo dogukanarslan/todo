@@ -1,5 +1,5 @@
 import Categories from "./Categories";
-
+import {characterLimit} from "../constants";
 const Sidebar = ({
   user,
   cards,
@@ -13,7 +13,20 @@ const Sidebar = ({
         <div className="sidebar-info-image">
           <i className=" far fa-user fa-5x"></i>
         </div>
-        <p>{`${user.name} ${user.surname}`}</p>
+        <div>
+          <p>
+            {user.name &&
+              (user.name.length < characterLimit
+                ? user.name
+                : user.name.substr(0, characterLimit) + "...")}
+          </p>
+          <p>
+            {user.surname &&
+              (user.surname.length < characterLimit
+                ? user.surname
+                : user.surname.substr(0, characterLimit) + "...")}
+          </p>
+        </div>
       </div>
       <Categories
         cards={cards}
