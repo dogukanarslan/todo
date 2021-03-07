@@ -1,6 +1,7 @@
 import Categories from "./Categories";
 
-const Sidebar = ({ user }) => {
+const Sidebar = ({ user, cards, setFilteredCards }) => {
+
   return (
     <div>
       <div>
@@ -8,7 +9,7 @@ const Sidebar = ({ user }) => {
       </div>
       <h2>{`${user.name} ${user.surname}`}</h2>
       <div>
-        <Categories />
+        <Categories cards={cards} setFilteredCards={setFilteredCards} />
       </div>
     </div>
   );

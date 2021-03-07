@@ -1,6 +1,6 @@
 const AddCard = ({ cards, setCards }) => {
   const handleClick = () => {
-    setCards([...cards, { id: Math.random(), title: "", todos: [] }]);
+    setCards([...cards, { id: Math.random(), title: "", todos: [], category: "" }]);
   };
   return (
     <button onClick={handleClick}>

@@ -5,6 +5,7 @@ import Sidebar from "./Sidebar";
 
 const Home = () => {
   const [cards, setCards] = useState([]);
+  const [filteredCards, setFilteredCards] = useState([]);
   const [user, setUser] = useState({});
 
   useEffect(() => {
@@ -12,14 +13,22 @@ const Home = () => {
     setUser(user);
   }, []);
 
+  useEffect(() => {
+    setFilteredCards(cards);
+  }, [cards]);
+
   if (user === null) {
     return <Redirect to="/login" />;
   }
 
   return (
     <div>
-      <Sidebar user={user} />
-      <Main cards={cards} setCards={setCards} />
+      <Sidebar
+        user={user}
+        cards={cards}
+        setFilteredCards={setFilteredCards}
+      />
+      <Main cards={filteredCards} setCards={setCards} />
     </div>
   );
 };

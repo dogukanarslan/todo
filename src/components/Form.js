@@ -1,3 +1,5 @@
+import { categories } from "../constants";
+
 const Form = ({
   inputText,
   setInputText,
@@ -50,6 +52,20 @@ const Form = ({
     setInputText("");
   };
 
+  const setCategory = (e) => {
+    setCards(
+      cards.map((item) => {
+        if (item.id === card.id) {
+          return {
+            ...item,
+            category: e.target.value,
+          };
+        }
+        return item;
+      })
+    );
+  };
+
   return (
     <form onSubmit={handleSubmit}>
       <input
@@ -58,6 +74,15 @@ const Form = ({
         placeholder="Title"
         onChange={titleHandler}
       />
+      <select value={card.category} onChange={setCategory}>
+        {categories.map((category) => {
+          return (
+            <option key={Math.random()} value={category.type}>
+              {category.type}
+            </option>
+          );
+        })}
+      </select>
       <input type="text" onChange={inputTextHandler} value={inputText} />
       <button>
         <i className="fas fa-plus square"></i>
