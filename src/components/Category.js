@@ -1,6 +1,6 @@
 const Category = ({ category, cards, setFilteredCards }) => {
   const filterCategories = () => {
-    if ("Everything" === category.type) {
+    if ("All" === category.type) {
       setFilteredCards(cards);
     } else {
       setFilteredCards(

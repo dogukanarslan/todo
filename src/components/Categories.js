@@ -2,7 +2,6 @@ import { categories } from "../constants";
 import Category from "./Category";
 
 const Categories = ({ cards, setFilteredCards }) => {
-
   return (
     <ul className="sidebar-categories">
       {categories.map((category) => {

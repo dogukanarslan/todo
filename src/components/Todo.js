@@ -37,7 +37,7 @@ const Todo = ({ card, cards, setCards, todo }) => {
 
   return (
     <div className="card-todos-todo">
-      <li>{todo.text}</li>
+      <li className={todo.completed && "card-todos-todo-completed"}>{todo.text}</li>
       <div className="card-todos-todo-buttons">
         <button onClick={handleComplete}>
           <i
